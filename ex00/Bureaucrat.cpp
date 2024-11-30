@@ -1,5 +1,11 @@
 #include "Bureaucrat.hpp"
 
+//add default constructor
+Bureaucrat::Bureaucrat() : name("Unnamed"), grade(150) {}
+
+Bureaucrat::Bureaucrat(const Bureaucrat& other)
+    : name(other.name), grade(other.grade) {}
+
 Bureaucrat::Bureaucrat(const std::string& name, int grade)
     : name(name), grade(grade) {
     if (grade < 1)
@@ -8,8 +14,6 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade)
         throw GradeTooLowException();
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other)
-    : name(other.name), grade(other.grade) {}
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
     if (this != &other) {
