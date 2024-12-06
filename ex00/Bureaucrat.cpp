@@ -1,6 +1,5 @@
 #include "Bureaucrat.hpp"
 
-//add default constructor
 Bureaucrat::Bureaucrat() : name("Unnamed"), grade(150) {}
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other)
